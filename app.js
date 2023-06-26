@@ -23,3 +23,18 @@ function hexToRgb(hex) {
 
   return `${r}, ${g}, ${b}`;
 }
+
+const colorMap = {
+  "#FFFF00": "Yellow",
+  "#CD5C5C": "IndianRed",
+  "#F08080": "LightCoral",
+  "#FA8072": "Salmon",
+};
+
+function getColorName(hex) {
+  return colorMap[hex] || `Unknown`;
+}
+
+const hexColor = `#CD5C5C`;
+const colorName = getColorName(hexColor);
+console.log(colorName);
