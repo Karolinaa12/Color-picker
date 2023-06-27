@@ -2,14 +2,21 @@ let colorInput = document.querySelector("#color");
 let hexInput = document.querySelector("#hex");
 let rgbInput = document.querySelector("#rgb");
 let header = document.querySelector("h1");
+let nameInput = document.querySelector("#colorName");
 
 colorInput.addEventListener("input", () => {
   let color = colorInput.value;
-  hexInput.value = color;
+  hexInput.value = color.toUpperCase();
   header.style.color = color;
 
   const hexColor = hexInput.value;
   const rgbColor = hexToRgb(hexColor);
+
+  const colorName = getColorName(hexColor);
+  nameInput.value = colorName;
+  console.log(colorName);
+
+  //console.log(hexColor.toUpperCase());
   console.log(rgbColor);
   rgbInput.value = rgbColor;
 });
@@ -35,6 +42,4 @@ function getColorName(hex) {
   return colorMap[hex] || `Unknown`;
 }
 
-const hexColor = `#CD5C5C`;
-const colorName = getColorName(hexColor);
-console.log(colorName);
+//const hexColor = `#CD5C5C`;
