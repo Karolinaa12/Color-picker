@@ -16,28 +16,10 @@
     <div class="container mt-5">
       <div class="main">
         <header class="text-center mb-4">
-          <h1 class="mb-3">Choose your color!</h1>
+          <h1 class="mb-3">Pick your color from palette</h1>
           <h2 class="text-center">🎨</h2>
         </header>
         <form>
-          <div class="row mb-3">
-            <div class="col">
-              <label for="hex" class="col-form-label">Hex</label>
-            </div>
-            <div class="col-sm-10">
-              <input type="text" id="hex" class="form-control" />
-            </div>
-          </div>
-
-          <div class="row mb-3">
-            <div class="col">
-              <label for="rgb" class="col-form-label">RGB</label>
-            </div>
-            <div class="col-sm-10">
-              <input type="text" id="rgb" class="form-control" />
-            </div>
-          </div>
-
           <div class="row mb-3 align-items-center">
             <div class="col">
               <label for="color" class="col-form-label">Color</label>
@@ -49,10 +31,28 @@
 
           <div class="row mb-3">
             <div class="col">
+              <label for="hex" class="col-form-label">Hex</label>
+            </div>
+            <div class="col-sm-10">
+              <input type="text" id="hex" class="form-control" disabled />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col">
+              <label for="rgb" class="col-form-label">RGB</label>
+            </div>
+            <div class="col-sm-10">
+              <input type="text" id="rgb" class="form-control" disabled />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col">
               <label for="colorName" class="col-form-label">Name</label>
             </div>
             <div class="col-sm-10">
-              <input type="text" id="colorName" class="form-control" />
+              <input type="text" id="colorName" class="form-control" disabled />
             </div>
           </div>
         </form>
