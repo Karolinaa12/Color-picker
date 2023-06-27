@@ -14,17 +14,11 @@ colorInput.addEventListener("input", () => {
   let hexColorApi = hexColor.slice(1);
 
   const colorName = getColorName(hexColor);
-  nameInput.value = colorName;
-  console.log(colorName);
-  const apiUrl = `https://www.thecolorapi.com/id?hex=${hexColorApi}`;
-  console.log(apiUrl);
+  //nameInput.value = colorName;
 
-  //console.log(hexColor.toUpperCase());
   console.log(rgbColor);
   rgbInput.value = rgbColor;
-  axios.get(`https://www.thecolorapi.com/id?hex=${hexColorApi}`).then((res) => {
-    console.log("RESPONSE: ", res);
-  });
+  getColorName(hexColorApi);
 });
 
 function hexToRgb(hex) {
@@ -37,15 +31,10 @@ function hexToRgb(hex) {
   return `${r}, ${g}, ${b}`;
 }
 
-const colorMap = {
-  "#FFFF00": "Yellow",
-  "#CD5C5C": "IndianRed",
-  "#F08080": "LightCoral",
-  "#FA8072": "Salmon",
-};
+const getColorName = async (hexValue) => {
+  const res = await axios.get(`https://www.thecolorapi.com/id?hex=${hexValue}`);
 
-function getColorName(hex) {
-  return colorMap[hex] || `Unknown`;
-}
+  nameInput.value = res.data.name.value;
+};
 
 //const hexColor = `#CD5C5C`;
