@@ -11,14 +11,20 @@ colorInput.addEventListener("input", () => {
 
   const hexColor = hexInput.value;
   const rgbColor = hexToRgb(hexColor);
+  let hexColorApi = hexColor.slice(1);
 
   const colorName = getColorName(hexColor);
   nameInput.value = colorName;
   console.log(colorName);
+  const apiUrl = `https://www.thecolorapi.com/id?hex=${hexColorApi}`;
+  console.log(apiUrl);
 
   //console.log(hexColor.toUpperCase());
   console.log(rgbColor);
   rgbInput.value = rgbColor;
+  axios.get(`https://www.thecolorapi.com/id?hex=${hexColorApi}`).then((res) => {
+    console.log("RESPONSE: ", res);
+  });
 });
 
 function hexToRgb(hex) {
