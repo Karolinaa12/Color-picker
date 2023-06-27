@@ -1,3 +1,11 @@
+footer {
+  font-size: 0.8em;
+}
+
+a {
+  color: black;
+}
+
 .main {
   max-width: 560px;
   margin: 50px auto;
